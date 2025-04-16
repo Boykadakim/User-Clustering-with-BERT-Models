@@ -9,7 +9,7 @@ Transfomer-powered clustering (BERTopic) is no better than legacy clustering for
 # Structure
 
 ## Data
-3 datasets: 
+3 datasets in .zip "Data": 
 - ExtractedTweets, housing data downloaded from the Kaggle source ([43] in the thesis). 
 - Dataset_versions, housing abridged versions of the original dataset generated through CSF.
 <img width="1086" alt="Data" src="https://github.com/user-attachments/assets/568dd0ac-2ad4-4553-8ba9-4e41130e0ee6" />
