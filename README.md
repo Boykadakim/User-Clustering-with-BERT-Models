@@ -25,10 +25,10 @@ Reducing volume of data to <= 256 tokens (embedding model ’all-MiniLM-L6-v2’
 Clustering-related analysis (both embeddings- and BERTopic-based) is gathered in "Clustering". Makes use of the DBCV file, credited to [30]. Makes use of two datasets: "Dataset_random_selection" and "Dataset_versions".  
 
 
-## Folder 'Final_results' 
-Visualisations from the Clustering folder. 
+## Results 
+<img width="536" alt="Results table" src="https://github.com/user-attachments/assets/b771d767-706d-4664-88a6-2706bf534a44" />
 
-### Clustering with SBERT embeddings: 
+### Legacy clustering on SBERT embeddings: 
 
 Cluster accuracy for unprocessed data
 ![random_agglo_clusters](https://github.com/user-attachments/assets/059a0c89-db4b-46a6-979a-0348847fc05a)
